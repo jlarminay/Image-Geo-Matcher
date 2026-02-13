@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply border-gray-300;
+  }
+
+  p {
+    @apply text-base wrap-break-word text-gray-800;
+  }
+  mono {
+    @apply font-mono;
+  }
+  .link {
+    @apply text-blue-500 hover:text-blue-600 transition duration-300 underline cursor-pointer;
+  }
+}
+
+/* ------------------------ */
+/* Quasar overrides */
+.q-tooltip {
+  @apply bg-gray-600 text-white text-base;
+}
+.q-table {
+  td,
+  th {
+    @apply text-base;
+  }
+}
+
+/* ------------------------ */
+/* modal styles */
+.modal-title {
+  @apply text-xl font-semibold mb-4;
+}
+.action-buttons {
+  @apply flex gap-2 justify-end items-center mt-4;
+}
+
+/* ------------------------ */
+/* form styles */
+label.label .required {
+  @apply text-red-500 font-black ml-0.5;
+}
+.q-form {
+  /* Form fields */
+  .q-field {
+    @apply transition-all pb-6 text-base;
+
+    &.q-field--error,
+    &.q-field--hint {
+      @apply mb-4;
+    }
+
+    .q-field__bottom {
+      @apply pt-1 text-xs px-0;
+    }
+
+    .q-field__inner {
+      @apply bg-white;
+    }
+
+    .q-chip .q-icon {
+      @apply transition-opacity;
+    }
+
+    .q-field__native[required]:not([required='false']) ~ .q-field__label::after,
+    .q-field__control-container:has(input[required='true']) .q-field__label::after {
+      content: ' *';
+      @apply text-red-500;
+    }
+  }
+
+  /* Form checkboxes */
+  .q-checkbox[required='true'] .q-checkbox__label::after {
+    content: ' *';
+    @apply text-red-500;
+  }
+}
+
+/* ------------------------ */
+/* toaster */
+.c-toast-container .c-toast {
+  @apply rounded border shadow bg-white w-100 max-w-[90%] px-4 py-5;
+}
+.c-toast-container .c-toast.c-toast--error,
+.c-toast-container .c-toast.c-toast--success {
+  @apply bg-white text-gray-800;
+}
