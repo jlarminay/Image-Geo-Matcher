@@ -20,6 +20,7 @@ app.use(router);
 app.use(Quasar, {
   plugins: {},
   config: {
+    dark: true,
     brand: {
       primary: '#0f172b',
       secondary: '#26A69A',

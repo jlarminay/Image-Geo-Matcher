@@ -1,11 +1,16 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
-import HomeRoutes from '@/modules/home/router';
+import HomeView from '../pages/HomeView.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
-    ...HomeRoutes,
+    {
+      path: '/',
+      name: 'HomeView',
+      component: HomeView,
+      meta: { tenantOnly: true },
+    },
 
     {
       path: '/:pathMatch(.*)*',

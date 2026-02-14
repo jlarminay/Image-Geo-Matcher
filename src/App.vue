@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView :key="$route.fullPath" />
+  <q-layout>
+    <router-view :key="$route.fullPath" class="h-screen" />
+  </q-layout>
 </template>
 
 <style scoped></style>
